@@ -1,13 +1,259 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El Tartista - Pastelería artística con postres de diseño en porciones personales. Descubre nuestras creaciones únicas y deliciosas.">
+    <meta name="keywords" content="pastelería, postres artísticos, tartas personales, repostería creativa, pasteles de diseño">
+    <title>El Tartista - Pastelería Artística | Postres de Diseño</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --text-color: #2C3E50;
+            --light-bg: #F7F9FC;
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3') center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            z-index: 9999;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-button i {
+            font-size: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .about {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            -o-object-fit: cover;
+               object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .contact {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="https://wa.me/593978981018" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="inicio">
+        <div class="hero-content">
+            <h1>El Tartista</h1>
+            <p>Arte y sabor en cada porción personal</p>
+            <a href="https://wa.me/593978981018" class="cta-button" target="_blank">Haz tu Pedido por WhatsApp</a>
+        </div>
+    </header>
+
+    <section id="sobre-nosotros" class="about">
+        <h2>Sobre Nosotros</h2>
+        <p>En El Tartista, transformamos cada postre en una obra de arte única. Nuestras creaciones combinan el sabor excepcional con diseños artísticos, todo en el tamaño perfecto para ti.</p>
+    </section>
+
+    <section id="galeria">
+        <h2>Nuestras Creaciones</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3" alt="Tarta artística de chocolate">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3" alt="Postre de frutas decorado">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3" alt="Mini tarta decorativa">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <p>+593 978 981 018</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info@eltartista.com</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Ubicación</h3>
+                <p>Calle Principal 123, Ciudad</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 El Tartista - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "El Tartista",
+        "description": "Pastelería artística especializada en postres de diseño en porciones personales",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle Principal 123",
+            "addressLocality": "Ciudad",
+            "addressCountry": "ES"
+        },
+        "telephone": "+34123456789",
+        "email": "info@eltartista.com",
+        "url": "https://www.eltartista.com",
+        "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3"
+    }
+    </script>
+</body>
 </html>
